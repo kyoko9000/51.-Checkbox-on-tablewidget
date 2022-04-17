@@ -5,8 +5,6 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
 from gui import Ui_MainWindow
 
-a = "hh"
-
 
 class MainWindow(QMainWindow):
     def __init__(self):
