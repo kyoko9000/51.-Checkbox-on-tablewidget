@@ -5,6 +5,8 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
 from gui import Ui_MainWindow
 
+a = "hh"
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -24,38 +26,38 @@ class MainWindow(QMainWindow):
             chkBoxItem.setText("Choose row {}".format(row))
             self.uic.tableWidget.setItem(row, 0, chkBoxItem)
 
-    # state 3: checkbox signal control========================
+        # state 3: checkbox signal control========================
         self.uic.tableWidget.cellChanged.connect(self.onCellChanged)
 
     def onCellChanged(self, row, column):
         item = self.uic.tableWidget.item(row, column)
         boxcheck = item.checkState()
 
-        # # .....method 1: single operation..............
-        # if row == 0 and column == 0 and boxcheck == Qt.CheckState.Checked:
-        #     print("checked", row, column)
-        #     chkBoxItem = QTableWidgetItem()
-        #     chkBoxItem.setText("Choose row")
-        #     self.uic.tableWidget.setItem(0, 1, chkBoxItem)
-        #
-        # elif row == 0 and column == 0 and boxcheck == Qt.CheckState.Unchecked:
-        #     print("unchecked", row, column)
-        #     chkBoxItem = QTableWidgetItem()
-        #     chkBoxItem.setText("")
-        #     self.uic.tableWidget.setItem(0, 1, chkBoxItem)
-
-        # .....method 2: multi operation............
-        if boxcheck == Qt.CheckState.Checked:
+        # .....method 1: single operation..............
+        if row == 0 and column == 0 and boxcheck == Qt.CheckState.Checked:
             print("checked", row, column)
             chkBoxItem = QTableWidgetItem()
-            chkBoxItem.setText("checked")
-            self.uic.tableWidget.setItem(row, column + 1, chkBoxItem)
+            chkBoxItem.setText("Choose row")
+            self.uic.tableWidget.setItem(0, 1, chkBoxItem)
 
         elif row == 0 and column == 0 and boxcheck == Qt.CheckState.Unchecked:
             print("unchecked", row, column)
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setText("")
             self.uic.tableWidget.setItem(0, 1, chkBoxItem)
+
+        # .....method 2: multi operation............
+        # if boxcheck == Qt.CheckState.Checked:
+        #     print("checked", row, column)
+        #     chkBoxItem = QTableWidgetItem()
+        #     chkBoxItem.setText("checked")
+        #     self.uic.tableWidget.setItem(row, column + 1, chkBoxItem)
+        #
+        # elif row == 0 and column == 0 and boxcheck == Qt.CheckState.Unchecked:
+        #     print("unchecked", row, column)
+        #     chkBoxItem = QTableWidgetItem()
+        #     chkBoxItem.setText("")
+        #     self.uic.tableWidget.setItem(0, 1, chkBoxItem)
 
 
 if __name__ == "__main__":
