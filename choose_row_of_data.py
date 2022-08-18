@@ -1,10 +1,11 @@
 # ************************** man hinh loai 2 *************************
 import sys
-# pip install pyqt6
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
-from gui import Ui_MainWindow
 
+from PyQt6 import QtCore, QtWidgets
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QStyle
+
+from gui import Ui_MainWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
