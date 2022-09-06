@@ -7,6 +7,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QStyle
 
 from gui import Ui_MainWindow
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
