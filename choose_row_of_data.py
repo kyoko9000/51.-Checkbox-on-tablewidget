@@ -45,7 +45,7 @@ class MainWindow(QMainWindow):
         #         list = []
         #         for _col in range(1, self.col_num):
         #             item = self.uic.tableWidget.item(0, _col)
-        #             list.append(item.text())
+        #             list.append(item.item())
         #         print(str(list))
         #     except:
         #         print("no data")
@@ -66,7 +66,7 @@ class MainWindow(QMainWindow):
                 list = []
                 for _col in range(1, self.col_num):
                     item = self.uic.tableWidget.item(row, _col)
-                    list.append(item.text())
+                    list.append(item.item())
                 print("row {}".format(row), str(list))
                 data = str(list)
                 self.show_data(data)
