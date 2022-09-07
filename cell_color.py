@@ -15,6 +15,7 @@ class MainWindow(QMainWindow):
         # state 1: add row and column=========================
         self.uic.tableWidget.setRowCount(8)
         self.uic.tableWidget.setColumnCount(4)
+
         item = QTableWidgetItem("6")
         self.uic.tableWidget.setItem(0, 1, item)
         self.item = self.uic.tableWidget.item(0, 1)
