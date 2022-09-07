@@ -11,7 +11,6 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.uic = Ui_MainWindow()
         self.uic.setupUi(self)
-        self.uic.pushButton.clicked.connect(self.f)
 
         # state 1: add row and column=========================
         self.uic.tableWidget.setRowCount(8)
@@ -19,8 +18,9 @@ class MainWindow(QMainWindow):
         item = QTableWidgetItem("6")
         self.uic.tableWidget.setItem(0, 1, item)
         self.item = self.uic.tableWidget.item(0, 1)
+        self.uic.tableWidget.cellChanged.connect(self.change_number)
 
-    def f(self):
+    def change_number(self):
         print(self.item.text())
         if self.item.text() == "0":
             brush = QtGui.QBrush(QtGui.QColor(0, 170, 255))
