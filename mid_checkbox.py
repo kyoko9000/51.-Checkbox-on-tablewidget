@@ -20,8 +20,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.uic = Ui_MainWindow()
         self.uic.setupUi(self)
-        self.uic.tableWidget.setRowCount(5)
         self.uic.tableWidget.setColumnCount(3)
+        self.uic.tableWidget.setRowCount(5)
         for row in range(5):
             checkbox_item = QTableWidgetItem()
             checkbox_item.setCheckState(QtCore.Qt.Unchecked)
